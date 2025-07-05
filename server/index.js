@@ -10,7 +10,7 @@ app.use(express.json());
 
   
 app.use(cors({
-  origin: 'http://192.168.8.102:5173', // your frontend URL
+  origin: 'https://thesis-title-generator-one.vercel.app/', // your frontend URL
   methods: ['POST'],
   credentials: true 
 }));
