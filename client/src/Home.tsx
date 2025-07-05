@@ -12,12 +12,11 @@ function Home() {
   const [vantaEffect, setVantaEffect] = useState<any>(null);
 
  useEffect(() => {
-  // Run only on the client and on large screens
   if (
     !vantaEffect &&
     typeof window !== "undefined" &&
     vantaRef.current &&
-    window.innerWidth >= 1024 // Tailwind's lg breakpoint
+    window.innerWidth >= 1024
   ) {
     const effect = GLOBE({
       el: vantaRef.current,
@@ -45,7 +44,7 @@ function Home() {
   return (
     <main className=" min-w-[320px] max-w-[1550px] w-full mx-auto bg-gradient-to-b from-gray-900 via-purple-900 to-violet-500"     >
       <section
-        // ref={vantaRef}
+        ref={vantaRef}
         className="w-full  min-h-[700px] md:min-h-[800px] flex flex-col items-center p-4 lg:p-8"
       style={{backgroundImage : `url(${bg})`}}
       >

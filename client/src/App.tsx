@@ -18,7 +18,7 @@ function App() {
       </Routes>
     </ChatProvider>
 
-    {/* <Footer/> */}
+    <Footer/>
     </Router>
   )
 }
