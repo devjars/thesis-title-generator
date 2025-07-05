@@ -8,9 +8,11 @@ const port = 3000;
 // Middleware
 app.use(express.json());
 
+  
 app.use(cors({
+  origin: 'http://192.168.8.102:5173', // your frontend URL
   methods: ['POST'],
-  origin: ['http://localhost:5173'], 
+  credentials: true 
 }));
 
 // Routes
@@ -21,3 +23,4 @@ app.use('/ai/generate', ThesisRoute);
 app.listen(port, () => {
   console.log(`SERVER IS RUNNING ON PORT ${port}`);
 });
+

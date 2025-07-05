@@ -1,16 +1,27 @@
+import {Link} from "react-scroll"
+import bg from "../assets/dark-mosaic (1).png";
 
 function Hero() {
   return (
-    <div className="w-full  flex flex-col justify-center items-center text-center px-6 py-38 text-white">
+    <div className="w-full h-screen flex flex-col justify-center items-center text-center px-6 py-38 text-white"
+      style={{backgroundImage : `url(${bg})`}}>
       <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight font-logo">
-        Unlock Brilliance with <span className="text-secondary lg:text-accent">Genithink</span>
+        Unlock Brilliance with <span className="text-purple-400 ">Genithink</span>
       </h1>
-      <p className="max-w-2xl text-lg md:text-xl mb-8 text-gray-300">
+      <p className="max-w-2xl text-lg md:text-xl mb-8 text-accent md:text-gray-300">
         Your AI-powered assistant for generating thesis titles and research ideas —
         intelligently tailored for every field.
       </p>
 
-      <button className="btn btn-secondary lg:btn-accent  lg:btn-wide lg:py-6 font-medium lg:text-sm font-primary rounded-full mt-8">Start Generating Ideas</button>
+    <Link
+  to="courselist"
+  smooth={true}
+  duration={700}
+  className="btn bg-purple-600 text-white  hover:bg-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 lg:btn-accent lg:btn-wide lg:py-6 font-medium lg:text-sm font-primary rounded-full mt-8 border-0"
+>
+  Start Generating Ideas
+</Link>
+
      
 
       <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl text-sm text-gray-400">

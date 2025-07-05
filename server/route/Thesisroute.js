@@ -3,23 +3,24 @@ const router = express.Router();
 const ApiController = require("../controller/ApiController");
 
 router.post('/thesis/title', async (req, res) => {
-  const { topic, content } = req.body;
+  const { field, message } = req.body;
 
-  if (!topic || !content) {
+  if (!field || !message) {
     return res.status(400).json({
       success: false,
-      message: "Please provide both topic and content."
+      message: "Please provide the content."
     });
   }
 
   try {
-    const result = await ApiController(topic, content);
+    const result = await ApiController(field, message);
 
     if (result && result.success) {
       return res.status(200).json({
         success: true,
         data: result.data
       });
+     
     } else {
       return res.status(400).json({
         success: false,
