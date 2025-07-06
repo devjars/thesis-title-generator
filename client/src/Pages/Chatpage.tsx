@@ -39,7 +39,7 @@ function Chatpage() {
 
       try {
         const response = await axios.post(
-          `https://thesis-title-generator-bfpa.onrender.com/ai/generate/thesis/title`,
+          `https://thesis-title-generator-bfpa.onrender.com/ai/generate/thesis/title/`,
           msg
         );
 
