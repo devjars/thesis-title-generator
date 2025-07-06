@@ -10,7 +10,7 @@ app.use(express.json());
 
   
 app.use(cors({
-  origin: 'https://thesis-title-generator-one.vercel.app', 
+  origin: 'https://jarsthesis-title-generator.vercel.app', 
   methods: ['POST'],
   credentials: true 
 }));
