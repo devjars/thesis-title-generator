@@ -2,9 +2,8 @@
 import './App.css'
 import Home from './Home'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
-import Chatpage from './Pages/Chatpage'
 import { ChatProvider } from './Context/MessageContext'
-import Footer from './component/Footer'
+import Chatbox from './Pages/Chatbox'
 
 function App() {
 
@@ -13,12 +12,11 @@ function App() {
     <ChatProvider>
         <Routes>
         <Route path='/' element={ <Home/>} />
-        <Route path='/ask/ai/:field' element={ <Chatpage/>} />
+        <Route path='/ask/ai' element={ <Chatbox/>} />
 
       </Routes>
     </ChatProvider>
 
-    <Footer/>
     </Router>
   )
 }

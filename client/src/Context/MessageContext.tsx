@@ -5,10 +5,12 @@ export type message = {
     sender : "You" | "Genethink"
     field : string
     message : string
+
 }
 type messagecontext = {
     messages : message[]
     AddMessage : (newmsg : message)=> void
+    Clear : ()=>void
 }
 
 const ChatContex = createContext<messagecontext | undefined > (undefined)
@@ -20,10 +22,14 @@ export const ChatProvider = ({children} : {children : ReactNode})=>{
     const AddMessage = (msg:message)=>{
         setmessages((prev) => [...prev , msg])
     }
+
+    const Clear = ():void=>{
+        setmessages([])
+    }
     
 
     return (
-        <ChatContex.Provider value={{ messages , AddMessage}}>
+        <ChatContex.Provider value={{ messages , AddMessage, Clear}}>
                 {children}
         </ChatContex.Provider>
     )

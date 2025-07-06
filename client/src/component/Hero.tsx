@@ -1,10 +1,9 @@
-import {Link} from "react-scroll"
-import bg from "../assets/dark-mosaic (1).png";
+import {Link} from "react-router-dom"
 
 function Hero() {
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center text-center px-6 py-38 text-white"
-      style={{backgroundImage : `url(${bg})`}}>
+    <div className="w-full min-h-screen flex flex-col justify-center items-center text-center px-6 py-38 text-white"
+    >
       <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight font-logo">
         Unlock Brilliance with <span className="text-purple-400 ">Genithink</span>
       </h1>
@@ -14,9 +13,7 @@ function Hero() {
       </p>
 
     <Link
-  to="courselist"
-  smooth={true}
-  duration={700}
+  to="/ask/ai"
   className="btn bg-purple-600 text-white  hover:bg-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 lg:btn-accent lg:btn-wide lg:py-6 font-medium lg:text-sm font-primary rounded-full mt-8 border-0"
 >
   Start Generating Ideas
