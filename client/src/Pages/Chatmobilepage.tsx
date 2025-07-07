@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import bg from "../assets/random-grey-variations.png";
 import Header from "../component/Header";
 import { FaArrowUp } from "react-icons/fa";
 import { useChat, type message } from "../Context/MessageContext";
