@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Potta+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import "tailwindcss";
-@plugin "daisyui";
+ @import "tailwindcss";
+ @plugin "daisyui" {
+
+  themes: dark --default;
+ }
 @theme{
     --font-logo: "Orbitron", sans-serif;
     --font-primary :"Lexend", sans-serif;

@@ -7,9 +7,12 @@
   import type { message } from "../Context/MessageContext";
   import { useChat } from "../Context/MessageContext";
   import { FaCircle } from "react-icons/fa";
+  import { AiFillHome } from "react-icons/ai";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import Error from "../component/Error";
 
-  function Chatbox() {
+  function Chatdekstoppage() {
       const [isopen,setisopen] = useState<boolean>(true)
       const [chosenfield,setchosenfield] = useState<string>("")
       const [TextareaRef, handleInputResize] = useTextareaAutoResize()
@@ -17,17 +20,33 @@ import axios from "axios";
       const { messages, AddMessage,Clear } = useChat();
       const NewmessageRef = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState<boolean>(false);
+const [error,seterror] = useState<boolean>(false)
+const [width,setwidth] = useState(window.innerWidth)
+const navigate = useNavigate()
 
+useEffect(()=>{
+  const handleInputResize = ()=>setwidth(window.innerWidth)
 
-    
+  window.addEventListener('resize', handleInputResize)
+
+  return ()=> window.removeEventListener('resize', handleInputResize)
+},[])
+
+    useEffect(()=>{
+      if(width < 1024){
+        navigate('/')
+      }
+    })
 
       axios.defaults.withCredentials = true
-      const SendMessage = async () =>{
+      const SendMessage = async (e?:React.FormEvent) =>{
+        if(e) e.preventDefault()
           if(!newmsg?.message.trim()) return;
 
           AddMessage(newmsg)
           setnewmsg(null)
       setLoading(true);
+      seterror(false)
           try{
             if(newmsg.message){
            const response = await axios.post(`https://thesis-title-generator-bfpa.onrender.com/ai/generate/thesis/title/`,newmsg );
@@ -42,11 +61,13 @@ import axios from "axios";
           }, 1500);
         } else {
           setLoading(false);
+         
         }
           }
           }catch(error){
  console.error("Failed to fetch response", error);
-        setLoading(false);
+            seterror(true)
+            setLoading(false)
           }
             setnewmsg({ sender: "Genethink", field: chosenfield, message: "" });
             if (TextareaRef.current) {
@@ -109,9 +130,17 @@ import axios from "axios";
     </div>
 
     <div className="relative flex-1  transition-all duration-300 ease-in-out flex flex-col items-center bg-white/5 no-scrollbar  overflow-x-hidden">
+     <div className="absolute top-0 left-0 w-full flex items-center justify-between p-2 h-full max-h-[50px]">
+         <h2 className=" text-2xl ">{chosenfield}</h2>
+         <Link to="/" >
+          <AiFillHome className="text-2xl mr-4 hover:scale-105"/>
+         </Link>
+       </div>
     {chosenfield === "" ? <Genethinkprofile/> :
       <div className="  w-full flex flex-col items-center justify-center h-full  pb-6  no-scrollbar overflow-y-scroll mt-14 border-t border-white/10  ">
-        <h2 className="absolute top-0 left-0 text-2xl m-2 mx-4">{chosenfield}</h2>
+    {error && 
+ <Error Clear={Clear} seterror={()=>seterror(!error)}  />
+}
 
          {messages.length !== 0  &&  <div className=" w-full h-full flex flex-col justify-end-safe  pb-4  pt-23 overflow-y-scroll px-52">
           {messages.map((chat,index) =>(
@@ -156,7 +185,7 @@ import axios from "axios";
           )}
             <form
              onSubmit={SendMessage}
-              className="bg-base-300   flex items-end w-[55%] p-4 overflow-x-hidden rounded-2xl   resize-none  ">
+              className="bg-base-300    flex items-end w-[55%] p-4 overflow-x-hidden rounded-2xl   resize-none  ">
                     <textarea 
                     ref={TextareaRef}
                     onInput={handleInputResize}
@@ -169,8 +198,8 @@ import axios from "axios";
                         SendMessage()
                       }
                     }}
-                    className="w-full p-2 h-[50px] max-h-[250px]  resize-none outline-0  pr-8 "/>
-                   {newmsg?.message &&  <button type="submit" className=" rounded-full shadow-md cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-base-100" >
+                    className="w-full  h-[50px] max-h-[250px]  resize-none outline-0  pr-8 "/>
+                   {newmsg?.message &&  <button type="submit" className="  rounded-full shadow-md cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-base-100" >
                         <FaArrowCircleUp className=" text-3xl  "/>
                     </button>}
           </form>
@@ -181,9 +210,9 @@ import axios from "axios";
     </div>
     
   </div>
-
+ 
   </div>
     )
   }
 
-  export default Chatbox
+  export default Chatdekstoppage

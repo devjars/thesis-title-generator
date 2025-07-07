@@ -1,4 +1,4 @@
-
+import { FcApproval } from "react-icons/fc";
     function Genethinkprofile() {
     return (
         <figure className="w-full h-full flex flex-col items-center justify-center  gap2">
@@ -9,7 +9,7 @@
   </div>
 </div>
             <figcaption className="text-center">
-                <h2  className="text-2xl mt-4 font-logo font-bold">Genethink</h2>
+                <h2  className="text-2xl mt-4 font-logo font-bold flex items-center justify-center gap-2">Genethink <span><FcApproval/></span> </h2>
 
                 <p className="mt-32 font-medium text-2xl px-16">Choose your Field to Generate Smart Thesis Title Ideas</p>
             </figcaption>
