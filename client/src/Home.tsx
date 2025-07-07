@@ -1,13 +1,14 @@
 import { courseList } from "./assets/data";
 
 import CourseCard from "./component/Card";
+import Footer from "./component/Footer";
 import Header from "./component/Header";
 import Hero from "./component/Hero";
 function Home() {
    
 
   return (
-    <main 
+    <main id="home"
      style={{ backgroundImage: `url('/bg.png')` }}
         className="min-w-[300px] max-w-[1550px] w-full  mx-auto  flex flex-col items-center ">
         <Header/>
@@ -15,7 +16,7 @@ function Home() {
          <Hero/>
 
           <h2 id="courselist" className="text-center text-xl font-primary px-4 lg:hidden"> Choose Your Field to Start Generating Thesis Ideas</h2>
-         <div className="w-[95%] mt-8 grid grid-cols-1 justify-items-center gap-2 sm:grid-cols-2  md:grid-cols-3 lg:hidden">
+         <div className="w-[95%] mt-8 grid grid-cols-1 justify-items-center gap-2 sm:grid-cols-2  md:grid-cols-3 lg:hidden pb-16">
             {courseList.map((course,index)=>(
               <CourseCard key={index} course={course.course} icon={course.icon} description={course.description}/>
             ))}
@@ -34,8 +35,10 @@ function Home() {
 
       
 
+            <Footer/>
          
        </section>
+       
          
     </main>
   );

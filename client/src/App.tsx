@@ -17,7 +17,8 @@
     return (
       <Router>
       <ChatProvider>
-      <Suspense fallback={<span className="loading loading-infinity loading-xl"></span>}>
+      <Suspense fallback={
+        <div className='h-screen w-screen flex justify-center items-center'><span className="loading loading-infinity loading-xl"></span></div>}>
           <Routes>
           <Route path='/' element={ <Home/>} />
       
