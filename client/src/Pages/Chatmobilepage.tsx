@@ -55,7 +55,7 @@ const navigate = useNavigate()
   const SendMessage = async () => {
     if (msg && msg.message.trim() !== "") {
       AddMessage(msg);
-       setmsg(null);
+         setmsg({ sender: "Genethink", field: field?? "unknown", message: "" });
       setLoading(true);
       seterror(false)
 
@@ -82,7 +82,7 @@ const navigate = useNavigate()
         setLoading(false);
         seterror(true)
       }
-        setmsg({ sender: "Genethink", field: field?? "unknown", message: "" });
+      
 
      
       if (textareaRef.current) {
@@ -97,14 +97,15 @@ const navigate = useNavigate()
      <div className="w-screen h-[100dvh] max-w-[1550px] max-h-screen overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-violet-500 mx-auto">
       <div
         className="w-full h-screen flex flex-col items-center pt-4 "
-        style={{ backgroundImage: `url(${bg})` }}
+        style={{ backgroundImage: `url('/bg.png')` }}
+
       >
        <div className="w-[80%] flex justify-center"> <Header /></div>
 
      
 
-        <div className="w-full  flex-1 flex flex-col items-center my-8 no-scrollbar overflow-y-scroll overflow-x-hidden pt-16">
-            {error && <Error Clear={Clear} seterror={()=>seterror(!error)}   />}
+        <div className="w-full  flex-1 flex flex-col items-center my-8 no-scrollbar overflow-y-scroll overflow-x-hidden pt-20">
+            {/* {error && <Error Clear={Clear} seterror={()=>seterror(!error)}   />} */}
           {messages.length !== 0 && (
             <div className="min-h-[100px]  w-full flex-1 no-scrollbar overflow-y-auto space-y-4 rounded-md text-white flex flex-col-reverse  ">
               <div className="w-full p-4 overflow-scroll no-scrollbar sm:px-16 md:px-32  lg:px-52 xl:px-80 ">

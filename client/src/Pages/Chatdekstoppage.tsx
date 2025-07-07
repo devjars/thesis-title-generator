@@ -44,7 +44,7 @@ useEffect(()=>{
           if(!newmsg?.message.trim()) return;
 
           AddMessage(newmsg)
-          setnewmsg(null)
+           setnewmsg({ sender: "Genethink", field: chosenfield, message: "" });
       setLoading(true);
       seterror(false)
           try{
@@ -69,7 +69,7 @@ useEffect(()=>{
             seterror(true)
             setLoading(false)
           }
-            setnewmsg({ sender: "Genethink", field: chosenfield, message: "" });
+         
             if (TextareaRef.current) {
     TextareaRef.current.style.height = "auto";
   }
@@ -94,12 +94,12 @@ useEffect(()=>{
       />
       {isopen && (
         <div className="p-4">
-          <div className="flex items-center gap-2 mt-1">
+          <Link to="/" className="flex items-center gap-2 mt-1">
             <FaCircle className="text-gray-400" />
             <FaCircle className="text-gray-400" />
             <FaCircle className="text-gray-400" />
 
-            </div>
+          </Link>
           <h2 className="text-xl font-medium font-primary mt-8">Genethink</h2>
           <label className="input mt-8">
     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

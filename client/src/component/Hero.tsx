@@ -11,7 +11,6 @@ function Hero() {
         Your AI-powered assistant for generating thesis titles and research ideas — intelligently tailored for every field.
       </p>
 
-      {/* Mobile Button - Scroll */}
       <ScrollLink
         to="courselist"
         smooth={true}
@@ -22,7 +21,6 @@ function Hero() {
         Start Generating Ideas
       </ScrollLink>
 
-      {/* Desktop Button - Navigate */}
       <Link
         to="/ask/ai"
         className="hidden lg:flex btn bg-purple-600 text-white hover:bg-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm font-primary rounded-full mt-8 border-0"

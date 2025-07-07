@@ -1,5 +1,5 @@
 import { courseList } from "./assets/data";
-import bg from "./assets/graphy-dark.png";
+
 import CourseCard from "./component/Card";
 import Header from "./component/Header";
 import Hero from "./component/Hero";
@@ -8,8 +8,8 @@ function Home() {
 
   return (
     <main 
-     style={{backgroundImage : `url(${bg})`}}
-      className="min-w-[300px] max-w-[1550px] w-full  mx-auto  flex flex-col items-center ">
+     style={{ backgroundImage: `url('/bg.png')` }}
+        className="min-w-[300px] max-w-[1550px] w-full  mx-auto  flex flex-col items-center ">
         <Header/>
        <section className="w-full h-full pt-8 sm:pt-16 bg-gradient-to-r from-stone-900 via-purple-500/5 to-stone-900 flex flex-col items-center "  >
          <Hero/>
