@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://jarsthesis-title-generator.vercel.app/sitemap.xml

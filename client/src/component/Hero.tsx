@@ -11,15 +11,16 @@ function Hero() {
         Your AI-powered assistant for generating thesis titles and research ideas — intelligently tailored for every field.
       </p>
 
-      <ScrollLink
-        to="courselist"
-        smooth={true}
-        duration={600}
-        offset={-100}
-        className=" lg:hidden btn bg-purple-600 text-white hover:bg-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm font-primary rounded-full mt-8 border-0 cursor-pointer"
-      >
-        Start Generating Ideas
-      </ScrollLink>
+        <ScrollLink
+          to="courselist"
+          smooth={true}
+          duration={600}
+          offset={-100}
+           href="#courselist"
+          className=" lg:hidden btn bg-purple-600 text-white hover:bg-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm font-primary rounded-full mt-8 border-0 cursor-pointer"
+        >
+          Start Generating Ideas
+        </ScrollLink>
 
       <Link
         to="/ask/ai"
