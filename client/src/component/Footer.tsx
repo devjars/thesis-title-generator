@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 max-w-[1550px] mx-auto">
       <aside className="space-y-2">
-       <Link to="home" smooth={true} duration={700}>
+       <Link to="home" smooth={true} duration={700} href="#home">
   <img
     src="/jarslogo.webp"
     alt="JARS Logo"
