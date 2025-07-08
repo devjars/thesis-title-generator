@@ -115,7 +115,7 @@ useEffect(()=>{
         <path d="m21 21-4.3-4.3"></path>
       </g>
     </svg>
-    <input type="search" required placeholder="Search field" />
+    <input type="search" required disabled placeholder="Search field" />
   </label>
   <h2 className="text-gray-400 font-primary mt-8">Fields</h2>
   <ul className="mt-2"> 
