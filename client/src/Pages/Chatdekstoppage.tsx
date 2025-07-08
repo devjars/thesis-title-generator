@@ -43,7 +43,8 @@ useEffect(()=>{
         if(e) e.preventDefault()
           if(!newmsg?.message.trim()) return;
 
-          AddMessage(newmsg)
+        const usermessage = { ...newmsg}
+          AddMessage(usermessage)
            setnewmsg({ sender: "Genethink", field: chosenfield, message: "" });
       setLoading(true);
       seterror(false)

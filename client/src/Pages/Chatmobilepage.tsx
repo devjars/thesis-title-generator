@@ -53,7 +53,10 @@ const navigate = useNavigate()
 
   const SendMessage = async () => {
     if (msg && msg.message.trim() !== "") {
-      AddMessage(msg);
+      
+      const usermessage = {...msg}
+
+      AddMessage(usermessage);
          setmsg({ sender: "Genethink", field: field?? "unknown", message: "" });
       setLoading(true);
       seterror(false)
