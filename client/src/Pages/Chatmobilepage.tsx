@@ -126,7 +126,7 @@ const navigate = useNavigate()
                     </div>
                     <div className="chat-header text-xs lg:text-lg font-medium">{chat.sender}</div>
                     <div
-                      className={`chat-bubble whitespace-pre-wrap text-sm  text-white ${
+                      className={`chat-bubble whitespace-pre-wrap   text-white ${
                         chat.sender === "Genethink" ? "bg-gray-700" : "bg-gray-900"
                       }`}
                     >
