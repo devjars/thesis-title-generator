@@ -24,7 +24,7 @@ function Hero() {
 
       <Link
         to="/ask/ai"
-        className="hidden lg:flex btn bg-purple-600 text-white hover:bg-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm font-primary rounded-full mt-8 border-0"
+        className="hidden lg:flex btn btn-wide py-6 bg-purple-600 text-white hover:bg-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm font-primary rounded-full mt-8 border-0"
       >
         Start Generating Ideas
       </Link>
